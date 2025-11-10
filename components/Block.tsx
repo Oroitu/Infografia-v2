@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import { BlockData } from '../types';
 import { MinusIcon, PlusIcon, TrashIcon, ImageIcon, XIcon, PaletteIcon } from './Icons';
@@ -235,33 +234,29 @@ const Block = forwardRef<HTMLDivElement, BlockProps>(({ data, onUpdate, onDelete
       {isActive && !isEditing && (
         <>
           {/* Left Resize Handle */}
-          {data.colSpan > 1 && (
-            <div
-              className="absolute left-0 top-0 z-10 h-full w-4 group/handle flex items-center justify-start cursor-ew-resize"
-              draggable
-              onDragStart={(e) => handleResizeStart(e, 'left')}
-              onDrag={handleResizeDrag}
-              onDragEnd={handleResizeEnd}
-              onDragOver={handleResizeOver}
-              aria-label="Decrease column span"
-            >
-              <div className="w-1.5 h-10 bg-[var(--accent-primary)] rounded-full opacity-50 group-hover/handle:opacity-100 transition-opacity" />
-            </div>
-          )}
+          <div
+            className="absolute left-0 top-0 z-10 h-full w-4 group/handle flex items-center justify-start cursor-ew-resize"
+            draggable
+            onDragStart={(e) => handleResizeStart(e, 'left')}
+            onDrag={handleResizeDrag}
+            onDragEnd={handleResizeEnd}
+            onDragOver={handleResizeOver}
+            aria-label="Resize from left"
+          >
+            <div className="w-1.5 h-10 bg-[var(--accent-primary)] rounded-full opacity-50 group-hover/handle:opacity-100 transition-opacity" />
+          </div>
           {/* Right Resize Handle */}
-          {data.colSpan < 3 && (
-            <div
-              className="absolute right-0 top-0 z-10 h-full w-4 group/handle flex items-center justify-end cursor-ew-resize"
-              draggable
-              onDragStart={(e) => handleResizeStart(e, 'right')}
-              onDrag={handleResizeDrag}
-              onDragEnd={handleResizeEnd}
-              onDragOver={handleResizeOver}
-              aria-label="Increase column span"
-            >
-              <div className="w-1.5 h-10 bg-[var(--accent-primary)] rounded-full opacity-50 group-hover/handle:opacity-100 transition-opacity" />
-            </div>
-          )}
+          <div
+            className="absolute right-0 top-0 z-10 h-full w-4 group/handle flex items-center justify-end cursor-ew-resize"
+            draggable
+            onDragStart={(e) => handleResizeStart(e, 'right')}
+            onDrag={handleResizeDrag}
+            onDragEnd={handleResizeEnd}
+            onDragOver={handleResizeOver}
+            aria-label="Resize from right"
+          >
+            <div className="w-1.5 h-10 bg-[var(--accent-primary)] rounded-full opacity-50 group-hover/handle:opacity-100 transition-opacity" />
+          </div>
         </>
       )}
 
