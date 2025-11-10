@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Infograph Masonry Editor",
+  "description": "A visual block editor for creating masonry-style infographics. Features drag-and-drop reordering with FLIP animations, column span controls, print-ready export, visual themes, and keyboard shortcuts.",
+  "requestFramePermissions": []
+}
